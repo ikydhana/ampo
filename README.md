@@ -1,4 +1,5 @@
-#Aplikasi Monitoring Prakerin Online
+# AMPO (Aplikasi Monitoring Prakerin Online)
 
-email : admin@crudbooster.com
-pass : 123456
+! Admin Login
+- Email: admin@crudbooster.com
+- Pass : 123456
