@@ -41,7 +41,7 @@
 			$this->form[] = ['label'=>'Pembimbing Sekolah','name'=>'id_pembimbing_sekolah','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'cms_users,name'];
 			$this->form[] = ['label'=>'Pembimbing Lapangan','name'=>'id_pembimbing_lapangan','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'cms_users,name'];
 			$this->form[] = ['label'=>'Tempat Magang','name'=>'id_tempat_magang','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Siswa','name'=>'id_cms_user','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'cms_users,name'];
+			$this->form[] = ['label'=>'Siswa','name'=>'id_cms_user','type'=>'datamodal','width'=>'col-sm-10','datamodal_table'=>'cms_users','datamodal_where'=>'id_cms_privileges = 2','datamodal_columns'=>'name','datamodal_column_alias'=>'Nama Siswa'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
