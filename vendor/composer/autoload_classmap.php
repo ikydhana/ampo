@@ -53,6 +53,7 @@ return array(
     'CreateCmsMenus' => $baseDir . '/database/migrations/2016_11_14_141657_create_cms_menus.php',
     'CreateCmsStatisticComponents' => $baseDir . '/database/migrations/2016_11_17_102740_create_cms_statistic_components.php',
     'CreateCmsStatistics' => $baseDir . '/database/migrations/2016_11_15_190410_create_cms_statistics.php',
+    'CreateDudiTable' => $baseDir . '/database/migrations/2020_02_07_212631_create_dudi_table.php',
     'CreateNullableCmsApicustom' => $baseDir . '/database/migrations/2016_09_17_104728_create_nullable_cms_apicustom.php',
     'CreatePembimbingTable' => $baseDir . '/database/migrations/2020_02_06_062736_create_pembimbing_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
