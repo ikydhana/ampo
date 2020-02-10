@@ -173,6 +173,19 @@ class CmsPrivilegesRolesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            12 => 
+            array (
+                'id' => 13,
+                'is_visible' => 1,
+                'is_create' => 1,
+                'is_read' => 1,
+                'is_edit' => 1,
+                'is_delete' => 1,
+                'id_cms_privileges' => 1,
+                'id_cms_moduls' => 13,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

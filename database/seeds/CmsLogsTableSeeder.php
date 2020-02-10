@@ -125,6 +125,54 @@ class CmsLogsTableSeeder extends Seeder
                 'created_at' => '2020-02-06 06:58:31',
                 'updated_at' => NULL,
             ),
+            9 => 
+            array (
+                'id' => 10,
+                'ipaddress' => '127.0.0.1',
+            'useragent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+                'url' => 'http://localhost:8000/admin/login',
+                'description' => 'admin@crudbooster.com login dengan IP Address 127.0.0.1',
+                'details' => '',
+                'id_cms_users' => 1,
+                'created_at' => '2020-02-07 21:23:38',
+                'updated_at' => NULL,
+            ),
+            10 => 
+            array (
+                'id' => 11,
+                'ipaddress' => '127.0.0.1',
+            'useragent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+                'url' => 'http://localhost:8000/admin/menu_management/edit-save/3',
+                'description' => 'Memperbaharui data Dunia Usaha / Industri pada Menu Management',
+                'details' => '<table class="table table-striped"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>name</td><td>DUDI</td><td>Dunia Usaha / Industri</td></tr><tr><td>color</td><td></td><td>normal</td></tr><tr><td>icon</td><td>fa fa-star</td><td>fa fa-map-marker</td></tr><tr><td>sorting</td><td>2</td><td></td></tr></tbody></table>',
+                'id_cms_users' => 1,
+                'created_at' => '2020-02-07 22:32:10',
+                'updated_at' => NULL,
+            ),
+            11 => 
+            array (
+                'id' => 12,
+                'ipaddress' => '127.0.0.1',
+            'useragent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+                'url' => 'http://localhost:8000/admin/dudi/add-save',
+                'description' => 'Tambah data baru PT. TELKOM pada Dunia Usaha / Industri',
+                'details' => '',
+                'id_cms_users' => 1,
+                'created_at' => '2020-02-07 22:32:42',
+                'updated_at' => NULL,
+            ),
+            12 => 
+            array (
+                'id' => 13,
+                'ipaddress' => '127.0.0.1',
+            'useragent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+                'url' => 'http://localhost:8000/admin/dudi/add-save',
+                'description' => 'Tambah data baru PT. PAMA pada Dunia Usaha / Industri',
+                'details' => '',
+                'id_cms_users' => 1,
+                'created_at' => '2020-02-07 22:33:01',
+                'updated_at' => NULL,
+            ),
         ));
         
         

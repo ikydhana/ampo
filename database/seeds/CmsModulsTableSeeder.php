@@ -185,6 +185,20 @@ class CmsModulsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'deleted_at' => NULL,
             ),
+            12 => 
+            array (
+                'id' => 13,
+                'name' => 'Dunia Usaha / Industri',
+                'icon' => 'fa fa-star',
+                'path' => 'dudi',
+                'table_name' => 'dudi',
+                'controller' => 'AdminDudiController',
+                'is_protected' => 0,
+                'is_active' => 0,
+                'created_at' => '2020-02-07 21:34:04',
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
         ));
         
         
