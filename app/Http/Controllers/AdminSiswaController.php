@@ -34,7 +34,7 @@
 			$this->col[] = ["label"=>"Photo","name"=>"photo","image"=>true];
 			$this->col[] = ["label"=>"Email","name"=>"email"];
 			$this->col[] = ["label"=>"Jurusan","name"=>"id_jurusan","join"=>"jurusan,nama_jurusan"];
-			$this->col[] = ["label"=>"Privileges","name"=>"id_cms_privileges","join"=>"cms_privileges,name"];
+			// $this->col[] = ["label"=>"Privileges","name"=>"id_cms_privileges","join"=>"cms_privileges,name"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -47,7 +47,7 @@
 			$this->form[] = ['label'=>'Tempat Lahir','name'=>'tempat_lahir','type'=>'text','validation'=>'min:1|max:50','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Tanggal Lahir','name'=>'tanggal_lahir','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Alamat','name'=>'alamat','type'=>'textarea','validation'=>'min:1|max:100','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Notlp','name'=>'notlp','type'=>'text','validation'=>'min:12','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'No tlp','name'=>'notlp','type'=>'text','validation'=>'min:12','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -251,7 +251,8 @@
 	        //Your code here
 					$id = CRUDBooster::myId();
 					$users = DB::table(config('crudbooster.USER_TABLE'))->where('id', $id)->first();
-	        $query->where('id_jurusan',$users->id_jurusan);
+					$roles = DB::table('cms_privileges')->where('name', 'Siswa')->first();
+			$query->where('id_jurusan',$users->id_jurusan)->where('id_cms_privileges',$roles->id);
 	    }
 
 	    /*
