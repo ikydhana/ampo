@@ -173,6 +173,66 @@ class CmsLogsTableSeeder extends Seeder
                 'created_at' => '2020-02-07 22:33:01',
                 'updated_at' => NULL,
             ),
+            13 => 
+            array (
+                'id' => 14,
+                'ipaddress' => '127.0.0.1',
+            'useragent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+                'url' => 'http://localhost:8000/admin/dudi/add-save',
+                'description' => 'Tambah data baru PT. Telkom pada Dunia Usaha / Industri',
+                'details' => '',
+                'id_cms_users' => 1,
+                'created_at' => '2020-02-10 01:54:07',
+                'updated_at' => NULL,
+            ),
+            14 => 
+            array (
+                'id' => 15,
+                'ipaddress' => '127.0.0.1',
+            'useragent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+                'url' => 'http://localhost:8000/admin/jurusan/add-save',
+                'description' => 'Tambah data baru Desain Komunikasi Visual pada Jurusan',
+                'details' => '',
+                'id_cms_users' => 1,
+                'created_at' => '2020-02-10 01:57:32',
+                'updated_at' => NULL,
+            ),
+            15 => 
+            array (
+                'id' => 16,
+                'ipaddress' => '127.0.0.1',
+            'useragent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+                'url' => 'http://localhost:8000/admin/jurusan/add-save',
+                'description' => 'Tambah data baru Perkantoran pada Jurusan',
+                'details' => '',
+                'id_cms_users' => 1,
+                'created_at' => '2020-02-10 01:58:01',
+                'updated_at' => NULL,
+            ),
+            16 => 
+            array (
+                'id' => 17,
+                'ipaddress' => '127.0.0.1',
+            'useragent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+                'url' => 'http://localhost:8000/admin/siswa/add-save',
+                'description' => 'Tambah data baru Spiderman Indo pada Siswa',
+                'details' => '',
+                'id_cms_users' => 1,
+                'created_at' => '2020-02-10 03:51:05',
+                'updated_at' => NULL,
+            ),
+            17 => 
+            array (
+                'id' => 18,
+                'ipaddress' => '127.0.0.1',
+            'useragent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+                'url' => 'http://localhost:8000/admin/siswa/add-save',
+                'description' => 'Tambah data baru Renaldo pada Siswa',
+                'details' => '',
+                'id_cms_users' => 1,
+                'created_at' => '2020-02-10 03:54:40',
+                'updated_at' => NULL,
+            ),
         ));
         
         

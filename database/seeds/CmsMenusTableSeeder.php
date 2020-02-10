@@ -65,6 +65,38 @@ class CmsMenusTableSeeder extends Seeder
                 'created_at' => '2020-02-07 21:34:04',
                 'updated_at' => '2020-02-07 22:32:09',
             ),
+            3 => 
+            array (
+                'id' => 4,
+                'name' => 'Jurusan',
+                'type' => 'Route',
+                'path' => 'AdminJurusanControllerGetIndex',
+                'color' => NULL,
+                'icon' => 'fa fa-glass',
+                'parent_id' => 0,
+                'is_active' => 1,
+                'is_dashboard' => 0,
+                'id_cms_privileges' => 1,
+                'sorting' => 3,
+                'created_at' => '2020-02-10 01:55:28',
+                'updated_at' => NULL,
+            ),
+            4 => 
+            array (
+                'id' => 5,
+                'name' => 'Siswa',
+                'type' => 'Route',
+                'path' => 'AdminSiswaControllerGetIndex',
+                'color' => NULL,
+                'icon' => 'fa fa-glass',
+                'parent_id' => 0,
+                'is_active' => 1,
+                'is_dashboard' => 0,
+                'id_cms_privileges' => 1,
+                'sorting' => 4,
+                'created_at' => '2020-02-10 02:38:31',
+                'updated_at' => NULL,
+            ),
         ));
         
         

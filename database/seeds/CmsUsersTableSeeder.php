@@ -28,6 +28,11 @@ class CmsUsersTableSeeder extends Seeder
                 'created_at' => '2020-01-30 06:26:47',
                 'updated_at' => NULL,
                 'status' => 'Active',
+                'id_jurusan' => '1',
+                'tempat_lahir' => NULL,
+                'tanggal_lahir' => NULL,
+                'alamat' => NULL,
+                'notlp' => NULL,
             ),
             1 => 
             array (
@@ -40,6 +45,11 @@ class CmsUsersTableSeeder extends Seeder
                 'created_at' => '2020-02-06 06:56:14',
                 'updated_at' => NULL,
                 'status' => NULL,
+                'id_jurusan' => '2',
+                'tempat_lahir' => NULL,
+                'tanggal_lahir' => NULL,
+                'alamat' => NULL,
+                'notlp' => NULL,
             ),
             2 => 
             array (
@@ -52,6 +62,11 @@ class CmsUsersTableSeeder extends Seeder
                 'created_at' => '2020-02-06 06:57:14',
                 'updated_at' => NULL,
                 'status' => NULL,
+                'id_jurusan' => '2',
+                'tempat_lahir' => NULL,
+                'tanggal_lahir' => NULL,
+                'alamat' => NULL,
+                'notlp' => NULL,
             ),
             3 => 
             array (
@@ -64,6 +79,45 @@ class CmsUsersTableSeeder extends Seeder
                 'created_at' => '2020-02-06 06:58:31',
                 'updated_at' => NULL,
                 'status' => NULL,
+                'id_jurusan' => '2',
+                'tempat_lahir' => NULL,
+                'tanggal_lahir' => NULL,
+                'alamat' => NULL,
+                'notlp' => NULL,
+            ),
+            4 => 
+            array (
+                'id' => 5,
+                'name' => 'Spiderman Indo',
+                'photo' => 'uploads/1/2020-02/rz_academy.png',
+                'email' => 'admin@admin.com',
+                'password' => '$2y$10$4j3j.oYRUJpPV84yxPkF6.u.j.BaTDKKesO9IfzYZlxd8LJ0xqYje',
+                'id_cms_privileges' => 2,
+                'created_at' => '2020-02-10 03:51:05',
+                'updated_at' => NULL,
+                'status' => 'Active',
+                'id_jurusan' => '1',
+                'tempat_lahir' => 'Mtp',
+                'tanggal_lahir' => '2020-02-04',
+                'alamat' => 'asdas',
+                'notlp' => '087814451942',
+            ),
+            5 => 
+            array (
+                'id' => 6,
+                'name' => 'Renaldo',
+                'photo' => NULL,
+                'email' => 'renaldi@gmail.com',
+                'password' => '$2y$10$O6Vi46ERgr3Y7NgvHZJQuuERKwcHtk5C2UV7rhkR/GbDAu/yB1oam',
+                'id_cms_privileges' => 2,
+                'created_at' => '2020-02-10 03:54:40',
+                'updated_at' => NULL,
+                'status' => 'Active',
+                'id_jurusan' => '1',
+                'tempat_lahir' => NULL,
+                'tanggal_lahir' => NULL,
+                'alamat' => NULL,
+                'notlp' => NULL,
             ),
         ));
         

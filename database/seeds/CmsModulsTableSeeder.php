@@ -199,6 +199,34 @@ class CmsModulsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'deleted_at' => NULL,
             ),
+            13 => 
+            array (
+                'id' => 14,
+                'name' => 'Jurusan',
+                'icon' => 'fa fa-glass',
+                'path' => 'jurusan',
+                'table_name' => 'jurusan',
+                'controller' => 'AdminJurusanController',
+                'is_protected' => 0,
+                'is_active' => 0,
+                'created_at' => '2020-02-10 01:55:28',
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            14 => 
+            array (
+                'id' => 15,
+                'name' => 'Siswa',
+                'icon' => 'fa fa-glass',
+                'path' => 'siswa',
+                'table_name' => 'cms_users',
+                'controller' => 'AdminSiswaController',
+                'is_protected' => 0,
+                'is_active' => 0,
+                'created_at' => '2020-02-10 02:38:31',
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
         ));
         
         
