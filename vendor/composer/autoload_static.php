@@ -452,6 +452,7 @@ class ComposerStaticInit9502ea7e5145bbcce18fa7103115c0d6
         'CreateCmsStatisticComponents' => __DIR__ . '/../..' . '/database/migrations/2016_11_17_102740_create_cms_statistic_components.php',
         'CreateCmsStatistics' => __DIR__ . '/../..' . '/database/migrations/2016_11_15_190410_create_cms_statistics.php',
         'CreateDudiTable' => __DIR__ . '/../..' . '/database/migrations/2020_02_07_212631_create_dudi_table.php',
+        'CreateJurusanTable' => __DIR__ . '/../..' . '/database/migrations/2020_02_10_014507_create_jurusan_table.php',
         'CreateNullableCmsApicustom' => __DIR__ . '/../..' . '/database/migrations/2016_09_17_104728_create_nullable_cms_apicustom.php',
         'CreatePembimbingTable' => __DIR__ . '/../..' . '/database/migrations/2020_02_06_062736_create_pembimbing_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
