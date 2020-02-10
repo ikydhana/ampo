@@ -49,6 +49,22 @@ class CmsMenusTableSeeder extends Seeder
                 'created_at' => '2020-02-06 06:38:46',
                 'updated_at' => NULL,
             ),
+            2 => 
+            array (
+                'id' => 3,
+                'name' => 'Dunia Usaha / Industri',
+                'type' => 'Route',
+                'path' => 'AdminDudiControllerGetIndex',
+                'color' => 'normal',
+                'icon' => 'fa fa-map-marker',
+                'parent_id' => 0,
+                'is_active' => 1,
+                'is_dashboard' => 0,
+                'id_cms_privileges' => 1,
+                'sorting' => 2,
+                'created_at' => '2020-02-07 21:34:04',
+                'updated_at' => '2020-02-07 22:32:09',
+            ),
         ));
         
         
