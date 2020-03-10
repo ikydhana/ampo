@@ -40,9 +40,9 @@
 			$this->form = [];
 			$currentUser = DB::table('cms_users')->where('id',CRUDBooster::myId())->first();
 			$this->form[] = ['label'=>'Nama Siswa','name'=>'id_cms_users','type'=>'text','value'=>$currentUser->name,'validation'=>'required|integer|min:0','width'=>'col-sm-10','readonly'=>true];
-			$this->form[] = ['label'=>'Uraian Kegiatan','name'=>'uraian','type'=>'textarea','validation'=>'required|date','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Uraian Kegiatan','name'=>'uraian','type'=>'textarea'];
 			$this->form[] = ['label'=>'Tanggal Kegiatan','name'=>'tgl_kegiatan','type'=>'date','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Foto Keg','name'=>'foto_keg','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Foto Kegiatan','name'=>'foto_keg','type'=>'upload','validation'=>'image'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
