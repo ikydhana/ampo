@@ -53,6 +53,15 @@ class CmsPrivilegesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            4 => 
+            array (
+                'id' => 5,
+                'name' => 'Kaprog',
+                'is_superadmin' => 0,
+                'theme_color' => 'skin-blue-light',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

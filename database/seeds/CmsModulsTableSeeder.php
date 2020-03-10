@@ -227,6 +227,20 @@ class CmsModulsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'deleted_at' => NULL,
             ),
+            15 => 
+            array (
+                'id' => 16,
+                'name' => 'Kegiatan',
+                'icon' => 'fa fa-bars',
+                'path' => 'kegiatan',
+                'table_name' => 'kegiatan',
+                'controller' => 'AdminKegiatanController',
+                'is_protected' => 0,
+                'is_active' => 0,
+                'created_at' => '2020-02-11 00:37:17',
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
         ));
         
         
