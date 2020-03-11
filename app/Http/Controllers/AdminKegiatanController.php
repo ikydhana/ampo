@@ -33,13 +33,13 @@
 			$this->col[] = ["label"=>"Uraian Kegiatan","name"=>"uraian"];
 			$this->col[] = ["label"=>"Tanggal Kegiatan","name"=>"tgl_kegiatan"];
 			$this->col[] = ["label"=>"Nama Siswa","name"=>"id_cms_users","join"=>"cms_users,name"];
-			$this->col[] = ["label"=>"Foto Keg","name"=>"foto_keg"];
+			$this->col[] = ["label"=>"Foto Kegiatan","name"=>"foto_keg"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$currentUser = DB::table('cms_users')->where('id',CRUDBooster::myId())->first();
-			$this->form[] = ['label'=>'Nama Siswa','name'=>'id_cms_users','type'=>'text','value'=>$currentUser->name,'validation'=>'required|integer|min:0','width'=>'col-sm-10','readonly'=>true];
+			$user_id = CRUDBooster::myId();
+			$this->form[] = ['label'=>'Nama Siswa','name'=>'id_cms_users','type'=>'hidden','value'=>$user_id,'validation'=>'required|integer|min:0','width'=>'col-sm-10','readonly'=>true];
 			$this->form[] = ['label'=>'Uraian Kegiatan','name'=>'uraian','type'=>'textarea'];
 			$this->form[] = ['label'=>'Tanggal Kegiatan','name'=>'tgl_kegiatan','type'=>'date','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Foto Kegiatan','name'=>'foto_keg','type'=>'upload','validation'=>'image'];
