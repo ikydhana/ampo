@@ -21,11 +21,11 @@ class DudiTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'nama_dudi' => 'PT. Telkom',
-                'alamat' => NULL,
+                'alamat' => 'Jl.Pangeran HM Noor No.17, Kemuning, Kec. Banjarbaru Selatan, Kota Banjar Baru, Kalimantan Selatan 70714',
                 'email' => NULL,
-                'notlp' => NULL,
+                'notlp' => '051147721',
                 'created_at' => '2020-02-10 01:54:07',
-                'updated_at' => NULL,
+                'updated_at' => '2020-03-10 06:36:32',
                 'id_jurusan' => NULL,
             ),
         ));
