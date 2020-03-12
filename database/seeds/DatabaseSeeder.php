@@ -33,5 +33,7 @@ class DatabaseSeeder extends Seeder
         $this->call(JurusanTableSeeder::class);
         $this->call(KegiatanTableSeeder::class);
         $this->call(CommentsTableSeeder::class);
+        $this->call(PtmTableSeeder::class);
+        $this->call(PtmDetailTableSeeder::class);
     }
 }

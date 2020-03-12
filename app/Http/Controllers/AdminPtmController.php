@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminPembimbingController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminPtmController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -25,40 +25,30 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "pembimbing";
+			$this->table = "ptm";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Pembimbing Sekolah","name"=>"id_pembimbing_sekolah","join"=>"cms_users,name"];
-
-			$this->col[] = ["label"=>"Tempat Magang","name"=>"id_dudi","join"=>"dudi,nama_dudi"];
-			// $this->col[] = ["label"=>"Pembimbing Lapangan","name"=>"id_pembimbing_lapangan","join"=>"cms_users,name"];
-			$this->col[] = ["label"=>"Tempat Magang","name"=>"id_tempat_magang","join"=>"dudi,nama_dudi"];
-			$this->col[] = ["label"=>"Siswa","name"=>"id_cms_user","join"=>"cms_users,name"];
+			$this->col[] = ["label"=>"Nama Pembimbing","name"=>"id_cms_users","join"=>"cms_users,name"];
+			$this->col[] = ["label"=>"Dudi","name"=>"id_dudi","join"=>"dudi,nama_dudi"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
-
+			$id = CRUDBooster::myId();
+			$users = DB::table(config('crudbooster.USER_TABLE'))->where('id', $id)->first();
+		
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			// $this->form[] = ['label'=>'Pembimbing Sekolah','type'=>'select','name'=>'id_pembimbing_sekolah','datatable'=>'cms_users,name','datatable_where'=>'id_cms_privileges = 3 && ','parent_select'=>'id_jurusan'];
-			$this->form[] = ['label'=>'Pembimbing Sekolah','name'=>'id_pembimbing_sekolah','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'cms_users,name'];
-			$this->form[] = ['label'=>'Tempat Magang','name'=>'id_tempat_magang','type'=>'datamodal','validation'=>'required|integer|min:0','width'=>'col-sm-10','datamodal_table'=>'dudi','datamodal_columns'=>'nama_dudi,alamat','datamodal_columns_alias_name'=>'Nama Tempat Magang, Alamat Tempat Magang'];
-			$this->form[] = ['label'=>'Siswa','name'=>'id_cms_user','type'=>'datamodal','width'=>'col-sm-10','datamodal_table'=>'cms_users','datamodal_columns'=>'name','datamodal_where'=>'id_cms_privileges = 2'];
-			// $this->form[] = ['label'=>'Pembimbing Lapangan','name'=>'id_pembimbing_lapangan','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'cms_users,name'];
-			$this->form[] = ['label'=>'Tempat Magang','name'=>'id_tempat_magang','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'dudi,nama_dudi'];
-			$this->form[] = ['label'=>'Pilih Jurusan','type'=>'select','name'=>'id_jurusan','datatable'=>'jurusan,nama_jurusan'];
-			// $this->form[] = ['label'=>'Pilih Jurusan','name'=>'id_jurusan','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'jurusan,nama_jurusan'];
-			$this->form[] = ['label'=>'Siswa','name'=>'id_cms_user','type'=>'datamodal','width'=>'col-sm-10','datamodal_table'=>'cms_users','datamodal_where'=>'id_cms_privileges = 2','datamodal_columns'=>'name','datamodal_column_alias'=>'Nama Siswa'];
+			$this->form[] = ['label'=>'Pilih Pembimbing','name'=>'id_cms_users','type'=>'datamodal','datamodal_table'=>'cms_users','datamodal_columns'=>'name','datamodal_where'=>'id_cms_privileges = 3 AND id_jurusan = '.$users->id_jurusan.''];
+			$this->form[] = ['label'=>'Pilih Tempat Magang','name'=>'id_dudi','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'dudi,nama_dudi','datatable_where'=>'id_jurusan = '.$users->id_jurusan.''];
+			$columns[] = ['label'=>'Nama Siswa','name'=>'id_cms_users','type'=>'datamodal','datamodal_table'=>'cms_users','datamodal_columns'=>'name','datamodal_where'=>'id_cms_privileges = 2 AND id_jurusan = '.$users->id_jurusan.'','datamodal_size'=>'small'];
+			$this->form[] = ['label'=>'Pilih Siswa','name'=>'ptm_detail','type'=>'child','columns'=>$columns,'table'=>'ptm_detail','foreign_key'=>'id_ptm'];
 			# END FORM DO NOT REMOVE THIS LINE
-
-
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Pembimbing Sekolah','name'=>'id_pembimbing_sekolah','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'cms_users,name'];
-			//// $this->form[] = ['label'=>'Pembimbing Lapangan','name'=>'id_pembimbing_lapangan','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'cms_users,name'];
-			//$this->form[] = ['label'=>'Tempat Magang','name'=>'id_tempat_magang','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Siswa','name'=>'id_cms_user','type'=>'datamodal','width'=>'col-sm-10','datamodal_table'=>'cms_users','datamodal_where'=>'id_cms_privileges = 2','datamodal_columns'=>'name','datamodal_column_alias'=>'Nama Siswa'];
+			//$this->form[] = ["label"=>"Pembimbing","name"=>"id_pembimbing","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"pembimbing,id"];
+			//$this->form[] = ["label"=>"Dudi","name"=>"id_dudi","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"dudi,nama_dudi"];
+			//$this->form[] = ["label"=>"Jurusan","name"=>"id_jurusan","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"jurusan,nama_jurusan"];
 			# OLD END FORM
 
 			/* 
@@ -267,14 +257,10 @@
 	    |
 	    */
 	    public function hook_before_add(&$postdata) {        
-	// 		$id = CRUDBooster::myId();
-	// 		$users = DB::table(config('crudbooster.USER_TABLE'))->where('id', $id)->first();
-	// 		$roles = DB::table('cms_privileges')->where('name', 'Siswa')->first();
-	// 		 unset($postdata['password_confirmation']);
-	// 		 $postdata['id_jurusan'] = $users->id_jurusan;
-	// 		 $postdata['id_cms_privileges'] = $roles->id;
-	//    $postdata['status'] = 'Active';
-
+	        //Your code here
+			$id = CRUDBooster::myId();
+			$users = DB::table(config('crudbooster.USER_TABLE'))->where('id', $id)->first();
+			$postdata['id_jurusan'] = $users->id_jurusan;
 	    }
 
 	    /* 

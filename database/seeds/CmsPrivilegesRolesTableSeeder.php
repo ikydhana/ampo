@@ -214,7 +214,46 @@ class CmsPrivilegesRolesTableSeeder extends Seeder
             ),
             15 => 
             array (
-                'id' => 16,
+                'id' => 19,
+                'is_visible' => 1,
+                'is_create' => 1,
+                'is_read' => 1,
+                'is_edit' => 1,
+                'is_delete' => 1,
+                'id_cms_privileges' => 1,
+                'id_cms_moduls' => 16,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            16 => 
+            array (
+                'id' => 23,
+                'is_visible' => 1,
+                'is_create' => 1,
+                'is_read' => 1,
+                'is_edit' => 1,
+                'is_delete' => 1,
+                'id_cms_privileges' => 1,
+                'id_cms_moduls' => 17,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            17 => 
+            array (
+                'id' => 24,
+                'is_visible' => 1,
+                'is_create' => 1,
+                'is_read' => 1,
+                'is_edit' => 1,
+                'is_delete' => 1,
+                'id_cms_privileges' => 1,
+                'id_cms_moduls' => 18,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            18 => 
+            array (
+                'id' => 25,
                 'is_visible' => 1,
                 'is_create' => 1,
                 'is_read' => 1,
@@ -225,9 +264,9 @@ class CmsPrivilegesRolesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            16 => 
+            19 => 
             array (
-                'id' => 17,
+                'id' => 26,
                 'is_visible' => 1,
                 'is_create' => 1,
                 'is_read' => 1,
@@ -238,9 +277,22 @@ class CmsPrivilegesRolesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            17 => 
+            20 => 
             array (
-                'id' => 18,
+                'id' => 27,
+                'is_visible' => 1,
+                'is_create' => 1,
+                'is_read' => 1,
+                'is_edit' => 1,
+                'is_delete' => 1,
+                'id_cms_privileges' => 5,
+                'id_cms_moduls' => 18,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            21 => 
+            array (
+                'id' => 28,
                 'is_visible' => 1,
                 'is_create' => 1,
                 'is_read' => 1,
@@ -248,19 +300,6 @@ class CmsPrivilegesRolesTableSeeder extends Seeder
                 'is_delete' => 1,
                 'id_cms_privileges' => 5,
                 'id_cms_moduls' => 15,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-            ),
-            18 => 
-            array (
-                'id' => 19,
-                'is_visible' => 1,
-                'is_create' => 1,
-                'is_read' => 1,
-                'is_edit' => 1,
-                'is_delete' => 1,
-                'id_cms_privileges' => 1,
-                'id_cms_moduls' => 16,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),

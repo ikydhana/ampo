@@ -241,6 +241,34 @@ class CmsModulsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'deleted_at' => NULL,
             ),
+            16 => 
+            array (
+                'id' => 17,
+                'name' => 'Pilih Tempat Magang',
+                'icon' => 'fa fa-map-marker',
+                'path' => 'ptm',
+                'table_name' => 'ptm',
+                'controller' => 'AdminPtmController',
+                'is_protected' => 0,
+                'is_active' => 0,
+                'created_at' => '2020-03-12 02:00:56',
+                'updated_at' => NULL,
+                'deleted_at' => '2020-03-12 02:06:42',
+            ),
+            17 => 
+            array (
+                'id' => 18,
+                'name' => 'Pilih Tempat Magang',
+                'icon' => 'fa fa-map-marker',
+                'path' => 'ptm',
+                'table_name' => 'ptm',
+                'controller' => 'AdminPtmController',
+                'is_protected' => 0,
+                'is_active' => 0,
+                'created_at' => '2020-03-12 02:06:59',
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
         ));
         
         

@@ -276,10 +276,10 @@
 				$id = CRUDBooster::myId();
 				$users = DB::table(config('crudbooster.USER_TABLE'))->where('id', $id)->first();
 				$roles = DB::table('cms_privileges')->where('name', 'Siswa')->first();
-				 unset($postdata['password_confirmation']);
-				 $postdata['id_jurusan'] = $users->id_jurusan;
-				 $postdata['id_cms_privileges'] = $roles->id;
-	       $postdata['status'] = 'Active';
+				unset($postdata['password_confirmation']);
+				$postdata['id_jurusan'] = $users->id_jurusan;
+				$postdata['id_cms_privileges'] = $roles->id;
+	       		$postdata['status'] = 'Active';
 
 	    }
 
