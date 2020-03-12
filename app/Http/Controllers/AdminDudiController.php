@@ -237,7 +237,9 @@
 	    */
 	    public function hook_query_index(&$query) {
 	        //Your code here
-	            
+			$id = CRUDBooster::myId();
+			$users = DB::table(config('crudbooster.USER_TABLE'))->where('id', $id)->first();
+			$query->where('id_jurusan',$users->id_jurusan);
 	    }
 
 	    /*
@@ -259,7 +261,12 @@
 	    */
 	    public function hook_before_add(&$postdata) {        
 	        //Your code here
-
+			$id = CRUDBooster::myId();
+			$users = DB::table(config('crudbooster.USER_TABLE'))->where('id', $id)->first();
+			unset($postdata['password_confirmation']);
+			$postdata['id_jurusan'] = $users->id_jurusan;
+			// $postdata['id_cms_privileges'] = $roles->id;
+			// $postdata['status'] = 'Active';
 	    }
 
 	    /* 

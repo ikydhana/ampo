@@ -79,7 +79,7 @@ class CmsUsersTableSeeder extends Seeder
                 'created_at' => '2020-02-06 06:58:31',
                 'updated_at' => NULL,
                 'status' => NULL,
-                'id_jurusan' => '2',
+                'id_jurusan' => '1',
                 'tempat_lahir' => NULL,
                 'tanggal_lahir' => NULL,
                 'alamat' => NULL,
