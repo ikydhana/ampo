@@ -31,16 +31,27 @@
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Pembimbing Sekolah","name"=>"id_pembimbing_sekolah","join"=>"cms_users,name"];
+
 			$this->col[] = ["label"=>"Tempat Magang","name"=>"id_dudi","join"=>"dudi,nama_dudi"];
+			// $this->col[] = ["label"=>"Pembimbing Lapangan","name"=>"id_pembimbing_lapangan","join"=>"cms_users,name"];
+			$this->col[] = ["label"=>"Tempat Magang","name"=>"id_tempat_magang","join"=>"dudi,nama_dudi"];
 			$this->col[] = ["label"=>"Siswa","name"=>"id_cms_user","join"=>"cms_users,name"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
+			// $this->form[] = ['label'=>'Pembimbing Sekolah','type'=>'select','name'=>'id_pembimbing_sekolah','datatable'=>'cms_users,name','datatable_where'=>'id_cms_privileges = 3 && ','parent_select'=>'id_jurusan'];
 			$this->form[] = ['label'=>'Pembimbing Sekolah','name'=>'id_pembimbing_sekolah','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'cms_users,name'];
 			$this->form[] = ['label'=>'Tempat Magang','name'=>'id_tempat_magang','type'=>'datamodal','validation'=>'required|integer|min:0','width'=>'col-sm-10','datamodal_table'=>'dudi','datamodal_columns'=>'nama_dudi,alamat','datamodal_columns_alias_name'=>'Nama Tempat Magang, Alamat Tempat Magang'];
 			$this->form[] = ['label'=>'Siswa','name'=>'id_cms_user','type'=>'datamodal','width'=>'col-sm-10','datamodal_table'=>'cms_users','datamodal_columns'=>'name','datamodal_where'=>'id_cms_privileges = 2'];
+			// $this->form[] = ['label'=>'Pembimbing Lapangan','name'=>'id_pembimbing_lapangan','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'cms_users,name'];
+			$this->form[] = ['label'=>'Tempat Magang','name'=>'id_tempat_magang','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'dudi,nama_dudi'];
+			$this->form[] = ['label'=>'Pilih Jurusan','type'=>'select','name'=>'id_jurusan','datatable'=>'jurusan,nama_jurusan'];
+			// $this->form[] = ['label'=>'Pilih Jurusan','name'=>'id_jurusan','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'jurusan,nama_jurusan'];
+			$this->form[] = ['label'=>'Siswa','name'=>'id_cms_user','type'=>'datamodal','width'=>'col-sm-10','datamodal_table'=>'cms_users','datamodal_where'=>'id_cms_privileges = 2','datamodal_columns'=>'name','datamodal_column_alias'=>'Nama Siswa'];
 			# END FORM DO NOT REMOVE THIS LINE
+
+
 
 			# OLD START FORM
 			//$this->form = [];
@@ -256,7 +267,13 @@
 	    |
 	    */
 	    public function hook_before_add(&$postdata) {        
-	        //Your code here
+	// 		$id = CRUDBooster::myId();
+	// 		$users = DB::table(config('crudbooster.USER_TABLE'))->where('id', $id)->first();
+	// 		$roles = DB::table('cms_privileges')->where('name', 'Siswa')->first();
+	// 		 unset($postdata['password_confirmation']);
+	// 		 $postdata['id_jurusan'] = $users->id_jurusan;
+	// 		 $postdata['id_cms_privileges'] = $roles->id;
+	//    $postdata['status'] = 'Active';
 
 	    }
 
