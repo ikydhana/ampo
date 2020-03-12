@@ -32,5 +32,6 @@ class DatabaseSeeder extends Seeder
         $this->call(DudiTableSeeder::class);
         $this->call(JurusanTableSeeder::class);
         $this->call(KegiatanTableSeeder::class);
+        $this->call(CommentsTableSeeder::class);
     }
 }

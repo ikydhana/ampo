@@ -617,6 +617,42 @@ class CmsLogsTableSeeder extends Seeder
                 'created_at' => '2020-03-10 06:47:29',
                 'updated_at' => NULL,
             ),
+            50 => 
+            array (
+                'id' => 52,
+                'ipaddress' => '127.0.0.1',
+            'useragent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+                'url' => 'http://127.0.0.1:8000/admin/login',
+                'description' => 'admin@crudbooster.com login dengan IP Address 127.0.0.1',
+                'details' => '',
+                'id_cms_users' => 1,
+                'created_at' => '2020-03-11 02:04:28',
+                'updated_at' => NULL,
+            ),
+            51 => 
+            array (
+                'id' => 53,
+                'ipaddress' => '127.0.0.1',
+            'useragent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+                'url' => 'http://127.0.0.1:8000/admin/menu_management/edit-save/7',
+                'description' => 'Memperbaharui data Kegiatan pada Menu Management',
+                'details' => '<table class="table table-striped"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>sorting</td><td>3</td><td></td></tr></tbody></table>',
+                'id_cms_users' => 1,
+                'created_at' => '2020-03-11 02:05:08',
+                'updated_at' => NULL,
+            ),
+            52 => 
+            array (
+                'id' => 54,
+                'ipaddress' => '127.0.0.1',
+            'useragent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+                'url' => 'http://127.0.0.1:8000/admin/kegiatan/add-save',
+                'description' => 'Tambah data baru  pada Kegiatan',
+                'details' => '',
+                'id_cms_users' => 1,
+                'created_at' => '2020-03-11 02:20:20',
+                'updated_at' => NULL,
+            ),
         ));
         
         

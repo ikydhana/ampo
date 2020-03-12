@@ -127,7 +127,7 @@ class CmsMenusTableSeeder extends Seeder
                 'id_cms_privileges' => 1,
                 'sorting' => 3,
                 'created_at' => '2020-02-11 00:37:17',
-                'updated_at' => '2020-03-10 06:47:29',
+                'updated_at' => '2020-03-11 02:05:08',
             ),
         ));
         
