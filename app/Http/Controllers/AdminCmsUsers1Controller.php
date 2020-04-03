@@ -5,12 +5,12 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminPtmController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminCmsUsers1Controller extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
 			# START CONFIGURATION DO NOT REMOVE THIS LINE
-			$this->title_field = "id";
+			$this->title_field = "name";
 			$this->limit = "20";
 			$this->orderby = "id,desc";
 			$this->global_privilege = false;
@@ -25,30 +25,43 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "ptm";
+			$this->table = "cms_users";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Nama Pembimbing","name"=>"id_cms_users","join"=>"cms_users,name"];
-			$this->col[] = ["label"=>"Dudi","name"=>"id_dudi","join"=>"dudi,nama_dudi"];
+			$this->col[] = ["label"=>"Nama Kaprog","name"=>"name"];
+			$this->col[] = ["label"=>"Photo","name"=>"photo","image"=>true];
+			$this->col[] = ["label"=>"Email","name"=>"email"];
+			$this->col[] = ["label"=>"Jurusan","name"=>"id_jurusan","join"=>"jurusan,nama_jurusan"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
-			$id = CRUDBooster::myId();
-			$users = DB::table(config('crudbooster.USER_TABLE'))->where('id', $id)->first();
-			$qpembimbing = 'cms_users.id NOT IN (select id_cms_users from ptm) AND (id_cms_privileges = 3 AND id_jurusan = '.$users->id_jurusan.')';
+
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Pilih Pembimbing','name'=>'id_cms_users','type'=>'datamodal','datamodal_table'=>'cms_users','datamodal_columns'=>'name','datamodal_where'=>$qpembimbing];
-			$this->form[] = ['label'=>'Pilih Tempat Magang','name'=>'id_dudi','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'dudi,nama_dudi','datatable_where'=>'id_jurusan = '.$users->id_jurusan.''];
-			$columns[] = ['label'=>'Nama Siswa','name'=>'id_cms_users','type'=>'datamodal','datamodal_table'=>'cms_users','datamodal_columns'=>'name','datamodal_where'=>'id_cms_privileges = 2 AND id_jurusan = '.$users->id_jurusan.'','datamodal_size'=>'small'];
-			$this->form[] = ['label'=>'Pilih Siswa','name'=>'ptm_detail','type'=>'child','columns'=>$columns,'table'=>'ptm_detail','foreign_key'=>'id_ptm'];
+			$this->form[] = ['label'=>'Nama Kaaprog','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'Anda hanya dapat memasukkan huruf saja'];
+			$this->form[] = ['label'=>'Photo','name'=>'photo','type'=>'upload','validation'=>'image|max:3000','width'=>'col-sm-10','help'=>'Tipe file yang didukung: JPG, JPEG, PNG, GIF, BMP'];
+			$this->form[] = ['label'=>'Email','name'=>'email','type'=>'email','validation'=>'required|min:1|max:255|email|unique:cms_users','width'=>'col-sm-10','placeholder'=>'Mohon input alamat email dengan benar'];
+			$this->form[] = ['label'=>'Password','name'=>'password','type'=>'password','validation'=>'min:3|max:32','width'=>'col-sm-10','help'=>'Minimal 5 karakter. Tinggalkan jika anda tidak mengubahnya'];
+			$this->form[] = ['label'=>'Pilih Jurusan','name'=>'id_jurusan','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Tempat Lahir','name'=>'tempat_lahir','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Tanggal Lahir','name'=>'tanggal_lahir','type'=>'date','validation'=>'date','width'=>'col-sm-10','datatable'=>'jurusan,nama_jurusan'];
+			$this->form[] = ['label'=>'Alamat','name'=>'alamat','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Notlp','name'=>'notlp','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ["label"=>"Pembimbing","name"=>"id_pembimbing","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"pembimbing,id"];
-			//$this->form[] = ["label"=>"Dudi","name"=>"id_dudi","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"dudi,nama_dudi"];
-			//$this->form[] = ["label"=>"Jurusan","name"=>"id_jurusan","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"jurusan,nama_jurusan"];
+			//$this->form[] = ["label"=>"Name","name"=>"name","type"=>"text","required"=>TRUE,"validation"=>"required|string|min:3|max:70","placeholder"=>"Anda hanya dapat memasukkan huruf saja"];
+			//$this->form[] = ["label"=>"Photo","name"=>"photo","type"=>"upload","required"=>TRUE,"validation"=>"required|image|max:3000","help"=>"Tipe file yang didukung: JPG, JPEG, PNG, GIF, BMP"];
+			//$this->form[] = ["label"=>"Email","name"=>"email","type"=>"email","required"=>TRUE,"validation"=>"required|min:1|max:255|email|unique:cms_users","placeholder"=>"Mohon input alamat email dengan benar"];
+			//$this->form[] = ["label"=>"Password","name"=>"password","type"=>"password","required"=>TRUE,"validation"=>"min:3|max:32","help"=>"Minimal 5 karakter. Tinggalkan jika anda tidak mengubahnya"];
+			//$this->form[] = ["label"=>"Cms Privileges","name"=>"id_cms_privileges","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"cms_privileges,name"];
+			//$this->form[] = ["label"=>"Status","name"=>"status","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Jurusan","name"=>"id_jurusan","type"=>"select2","required"=>TRUE,"validation"=>"required|min:1|max:255","datatable"=>"jurusan,nama_jurusan"];
+			//$this->form[] = ["label"=>"Tempat Lahir","name"=>"tempat_lahir","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Tanggal Lahir","name"=>"tanggal_lahir","type"=>"date","required"=>TRUE,"validation"=>"required|date"];
+			//$this->form[] = ["label"=>"Alamat","name"=>"alamat","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Notlp","name"=>"notlp","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
 			# OLD END FORM
 
 			/*
@@ -236,6 +249,9 @@
 	    */
 	    public function hook_query_index(&$query) {
 	        //Your code here
+					$id = CRUDBooster::myId();
+					$roles = DB::table('cms_privileges')->where('name', 'Kaprog')->first();
+					$query->where('id_cms_privileges',$roles->id);
 
 	    }
 
@@ -258,10 +274,12 @@
 	    */
 	    public function hook_before_add(&$postdata) {
 	        //Your code here
-			$id = CRUDBooster::myId();
-			$users = DB::table(config('crudbooster.USER_TABLE'))->where('id', $id)->first();
-			$postdata['id_jurusan'] = $users->id_jurusan;
-			//dd($postdata);
+					$id = CRUDBooster::myId();
+					$users = DB::table(config('crudbooster.USER_TABLE'))->where('id', $id)->first();
+					$roles = DB::table('cms_privileges')->where('name', 'Kaprog')->first();
+					$postdata['id_jurusan'] = $users->id_jurusan;
+					$postdata['id_cms_privileges'] = $roles->id;
+					$postdata['status'] = 'Active';
 	    }
 
 	    /*
