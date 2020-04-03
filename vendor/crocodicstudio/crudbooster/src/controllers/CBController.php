@@ -358,7 +358,7 @@ class CBController extends Controller
                 }
             } else {
 
-                if(isset($field_array[1])) {                    
+                if(isset($field_array[1])) {
                     $result->addselect($table.'.'.$field.' as '.$table.'_'.$field);
                     $columns_table[$index]['type_data'] = CRUDBooster::getFieldType($table, $field);
                     $columns_table[$index]['field'] = $table.'_'.$field;
@@ -369,7 +369,7 @@ class CBController extends Controller
                     $columns_table[$index]['field'] = $field;
                     $columns_table[$index]['field_raw'] = $field;
                 }
-                
+
                 $columns_table[$index]['field_with'] = $table.'.'.$field;
             }
         }
@@ -1152,11 +1152,11 @@ class CBController extends Controller
 
 //         $this->arr[$this->primary_key] = $id = CRUDBooster::newId($this->table); //error on sql server
         $lastInsertId = $id = DB::table($this->table)->insertGetId($this->arr);
-        
+
         //fix bug if primary key is uuid
         if($this->arr[$this->primary_key]!=$id)
             $id = $this->arr[$this->primary_key];
-        
+
         //Looping Data Input Again After Insert
         foreach ($this->data_inputan as $ro) {
             $name = $ro['name'];
@@ -1223,7 +1223,8 @@ class CBController extends Controller
                         if(!empty($colvalue)) $column_data[$colname] = $colvalue;
                     }
                     if(!empty($column_data)){
-                        $column_data[$fk] = $id;
+                        //$column_data[$fk] = $id;
+                        $column_data[$fk] = $lastInsertId;
                         $child_array[] = $column_data;
                     }
                 }
@@ -1473,9 +1474,9 @@ class CBController extends Controller
             $file = storage_path('app/'.$file);
             $rows = Excel::load($file, function ($reader) {
             })->get();
-            
+
             $countRows = ($rows)?count($rows):0;
-            
+
             Session::put('total_data_import', $countRows);
 
             $data_import_column = [];
