@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminCmsUsers1Controller extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminCmsUsers20Controller extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -30,7 +30,7 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Nama Kaprog","name"=>"name"];
+			$this->col[] = ["label"=>"Nama Pembimbing","name"=>"name"];
 			$this->col[] = ["label"=>"Photo","name"=>"photo","image"=>true];
 			$this->col[] = ["label"=>"Email","name"=>"email"];
 			$this->col[] = ["label"=>"Jurusan","name"=>"id_jurusan","join"=>"jurusan,nama_jurusan"];
@@ -38,14 +38,13 @@
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Nama Kaaprog','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'Anda hanya dapat memasukkan huruf saja'];
+			$this->form[] = ['label'=>'Nama Pembimbing','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'Anda hanya dapat memasukkan huruf saja'];
 			$this->form[] = ['label'=>'Photo','name'=>'photo','type'=>'upload','validation'=>'image|max:3000','width'=>'col-sm-10','help'=>'Tipe file yang didukung: JPG, JPEG, PNG, GIF, BMP'];
 			$this->form[] = ['label'=>'Email','name'=>'email','type'=>'email','validation'=>'required|min:1|max:255|email|unique:cms_users','width'=>'col-sm-10','placeholder'=>'Mohon input alamat email dengan benar'];
 			$this->form[] = ['label'=>'Password','name'=>'password','type'=>'password','validation'=>'min:3|max:32','width'=>'col-sm-10','help'=>'Minimal 5 karakter. Tinggalkan jika anda tidak mengubahnya'];
-			//$this->form[] = ['label'=>'Pilih Jurusan','name'=>'id_jurusan','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Pilih Jurusan','name'=>'id_jurusan','type'=>'datamodal','datamodal_table'=>'jurusan','datamodal_columns'=>'nama_jurusan','datamodal_where'=>''];
+			$this->form[] = ['label'=>'Pilih Jurusan','name'=>'id_jurusan','type'=>'datamodal','datamodal_table'=>'jurusan','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Tempat Lahir','name'=>'tempat_lahir','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Tanggal Lahir','name'=>'tanggal_lahir','type'=>'date','validation'=>'date','width'=>'col-sm-10','datatable'=>'jurusan,nama_jurusan'];
+			$this->form[] = ['label'=>'Tanggal Lahir','name'=>'tanggal_lahir','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Alamat','name'=>'alamat','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Notlp','name'=>'notlp','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
@@ -248,10 +247,10 @@
 	    | @query = current sql query
 	    |
 	    */
-	    public function hook_query_index(&$query) {
+			public function hook_query_index(&$query) {
 	        //Your code here
 					$id = CRUDBooster::myId();
-					$roles = DB::table('cms_privileges')->where('name', 'Kaprog')->first();
+					$roles = DB::table('cms_privileges')->where('name', 'Pembimbing Sekolah')->first();
 					$query->where('id_cms_privileges',$roles->id);
 
 	    }
@@ -276,9 +275,9 @@
 	    public function hook_before_add(&$postdata) {
 	        //Your code here
 					$id = CRUDBooster::myId();
-					$users = DB::table(config('crudbooster.USER_TABLE'))->where('id', $id)->first();
-					$roles = DB::table('cms_privileges')->where('name', 'Kaprog')->first();
-					$postdata['id_jurusan'] = $users->id_jurusan;
+					//$users = DB::table(config('crudbooster.USER_TABLE'))->where('id', $id)->first();
+					$roles = DB::table('cms_privileges')->where('name', 'Pembimbing Sekolah')->first();
+					//$postdata['id_jurusan'] = $users->id_jurusan;
 					$postdata['id_cms_privileges'] = $roles->id;
 					$postdata['status'] = 'Active';
 	    }
