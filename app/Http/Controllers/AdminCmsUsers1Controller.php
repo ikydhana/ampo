@@ -151,7 +151,7 @@
 	        |
 	        */
 	        $this->index_statistic = array();
-
+					$this->index_statistic[] = ['label'=>'Total Data','count'=>DB::table('cms_users')->count(),'icon'=>'fa fa-check','color'=>'success'];
 
 
 	        /*

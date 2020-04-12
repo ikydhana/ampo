@@ -23,8 +23,8 @@
 			$this->button_detail = true;
 			$this->button_show = true;
 			$this->button_filter = true;
-			$this->button_import = false;
-			$this->button_export = false;
+			$this->button_import = true;
+			$this->button_export = true;
 			$this->table = "cms_users";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
@@ -42,7 +42,7 @@
 			$this->form[] = ['label'=>'Photo','name'=>'photo','type'=>'upload','validation'=>'image|max:3000','width'=>'col-sm-10','help'=>'Tipe file yang didukung: JPG, JPEG, PNG, GIF, BMP'];
 			$this->form[] = ['label'=>'Email','name'=>'email','type'=>'email','validation'=>'required|min:1|max:255|email|unique:cms_users','width'=>'col-sm-10','placeholder'=>'Mohon input alamat email dengan benar'];
 			$this->form[] = ['label'=>'Password','name'=>'password','type'=>'password','validation'=>'min:3|max:32','width'=>'col-sm-10','help'=>'Minimal 5 karakter. Tinggalkan jika anda tidak mengubahnya'];
-			$this->form[] = ['label'=>'Pilih Jurusan','name'=>'id_jurusan','type'=>'datamodal','datamodal_table'=>'jurusan','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Pilih Jurusan','name'=>'id_jurusan','type'=>'datamodal','validation'=>'required|min:1|max:255','width'=>'col-sm-10','datamodal_table'=>'jurusan','datamodal_columns'=>'nama_jurusan'];
 			$this->form[] = ['label'=>'Tempat Lahir','name'=>'tempat_lahir','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Tanggal Lahir','name'=>'tanggal_lahir','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Alamat','name'=>'alamat','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
@@ -51,17 +51,15 @@
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ["label"=>"Name","name"=>"name","type"=>"text","required"=>TRUE,"validation"=>"required|string|min:3|max:70","placeholder"=>"Anda hanya dapat memasukkan huruf saja"];
-			//$this->form[] = ["label"=>"Photo","name"=>"photo","type"=>"upload","required"=>TRUE,"validation"=>"required|image|max:3000","help"=>"Tipe file yang didukung: JPG, JPEG, PNG, GIF, BMP"];
-			//$this->form[] = ["label"=>"Email","name"=>"email","type"=>"email","required"=>TRUE,"validation"=>"required|min:1|max:255|email|unique:cms_users","placeholder"=>"Mohon input alamat email dengan benar"];
-			//$this->form[] = ["label"=>"Password","name"=>"password","type"=>"password","required"=>TRUE,"validation"=>"min:3|max:32","help"=>"Minimal 5 karakter. Tinggalkan jika anda tidak mengubahnya"];
-			//$this->form[] = ["label"=>"Cms Privileges","name"=>"id_cms_privileges","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"cms_privileges,name"];
-			//$this->form[] = ["label"=>"Status","name"=>"status","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Jurusan","name"=>"id_jurusan","type"=>"select2","required"=>TRUE,"validation"=>"required|min:1|max:255","datatable"=>"jurusan,nama_jurusan"];
-			//$this->form[] = ["label"=>"Tempat Lahir","name"=>"tempat_lahir","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Tanggal Lahir","name"=>"tanggal_lahir","type"=>"date","required"=>TRUE,"validation"=>"required|date"];
-			//$this->form[] = ["label"=>"Alamat","name"=>"alamat","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Notlp","name"=>"notlp","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ['label'=>'Nama Pembimbing','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'Anda hanya dapat memasukkan huruf saja'];
+			//$this->form[] = ['label'=>'Photo','name'=>'photo','type'=>'upload','validation'=>'image|max:3000','width'=>'col-sm-10','help'=>'Tipe file yang didukung: JPG, JPEG, PNG, GIF, BMP'];
+			//$this->form[] = ['label'=>'Email','name'=>'email','type'=>'email','validation'=>'required|min:1|max:255|email|unique:cms_users','width'=>'col-sm-10','placeholder'=>'Mohon input alamat email dengan benar'];
+			//$this->form[] = ['label'=>'Password','name'=>'password','type'=>'password','validation'=>'min:3|max:32','width'=>'col-sm-10','help'=>'Minimal 5 karakter. Tinggalkan jika anda tidak mengubahnya'];
+			//$this->form[] = ['label'=>'Pilih Jurusan','name'=>'id_jurusan','type'=>'datamodal','datamodal_table'=>'jurusan','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Tempat Lahir','name'=>'tempat_lahir','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Tanggal Lahir','name'=>'tanggal_lahir','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Alamat','name'=>'alamat','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Notlp','name'=>'notlp','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			# OLD END FORM
 
 			/*

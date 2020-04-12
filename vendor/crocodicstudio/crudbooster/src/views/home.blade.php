@@ -1,41 +1,62 @@
 @extends('crudbooster::admin_template')
 
 @section('content')
-<img style="  display:block;margin-left: auto;margin-right:auto;width:18%;" src="http://smkn1banjarbaru.sch.id/wp-content/uploads/2018/07/logo-smik-besar-245x300.png">
-<br>
-<br>
-<h1><p style="text-align:center;"><b>AMPO (Aplikasi Monitoring Prakerin Online)</b></p></h1>
-<br>
-<br>
-<h1><p style="text-align:center;">VISI</p></h1>
-<h4><p style="text-align:justify;">Terwujudnya lulusan yang bermoral, kompeten, mandiri, unggul dan berwawasan lingkungan.</p></h4>
-<br>
-<br>
-<h1><p style="text-align:center;">Misi</p></h1>
-<h4><p style="text-align:justify;">- Melaksanakan pembinaan mental keagamaan, kerja dan sosial.</p></h4>
-<br>
-<h4><p style="text-align:justify;">- Menumbuhkan sikap mandiri, kreatif, inovatif, kompetitif dan tidak mudah putus asa.</p></h4>
-<br>
-<h4><p style="text-align:justify;">- Meningkatkan mutu lulusan yang unggul dan kompeten untuk memenuhi tuntutan dunia kerja</p></h4>
-<br>
-<h4><p style="text-align:justify;">- Meningkatkan kepedulian terhadap lingkungan yang rindang, bersih, rapi dan sehat.</p></h4>
-<br>
-<h4><p style="text-align:justify;">- Mewujudkan lingkungan yang nyaman aman, rindang, asri dan bersih</p></h4>
-<br>
-<h4><p style="text-align:justify;">- Mencegah terjadinya pencemaran lingkungan</p></h4>
-<br>
-<h4><p style="text-align:justify;">- Mencegah terjadinya kerusakan lingkungan</p></h4>
-<br>
-<h4><p style="text-align:justify;">- Mewujudkan perilaku 3R (Re-duce, Re-use, dan Re-cycle)</p></h4>
-<br>
-<br>
-<h1><p style="text-align:center;">Tujuan</p></h1>
-<br>
-<h4><p style="text-align:justify;">- Menghasilkan lulusan yang berakhlak mulia, cerdas dan terampil.</p></h4>
-<br>
-<h4><p style="text-align:justify;">- Menghasilkan lulusan yang memiliki ilmu pengetahuan dan teknologi untuk melanjutkan ke jenjang pendidikan yang lebih tinggi.</p></h4>
-<br>
-<h4><p style="text-align:justify;">- Mewujudkan lulusan yang mandiri sesuai dengan tuntutan dunia usaha/kerja.</p></h4>
-<br>
-<h4><p style="text-align:justify;">- Mewujudkan lulusan yang peduli terhadap lingkungan.</p></h4>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-info">
+      <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+
+              <img style="padding: 30px 0;width:200px;" src="http://smkn1banjarbaru.sch.id/wp-content/uploads/2018/07/logo-smik-besar-245x300.png" alt="..." class="img-fluid">
+          </div>
+          <div class="col-md-8 col-sm-6 col-xs-12">
+                  <h3>
+            AMPO
+            <small class="text-muted">(Aplikasi Monitoring Prakerin Online)</small>
+            </h3>
+            <p>Aplikasi ini bertujuan memudahkan monitoring prakerin, pelaporan kegiatan prakerin dapat dilaporkan secara online</p>
+          </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <!-- Apply any bg-* class to to the icon to color it -->
+        <span class="info-box-icon bg-green"><i class="fa fa-users"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Total Siswa</span>
+          <span class="info-box-number">{{ $jml_siswa }}</span>
+        </div><!-- /.info-box-content -->
+      </div><!-- /.info-box -->
+  </div>
+  <div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <!-- Apply any bg-* class to to the icon to color it -->
+        <span class="info-box-icon bg-blue"><i class="fa fa-user"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Pembimbing Magang</span>
+          <span class="info-box-number">{{ $jml_pembimbing }}</span>
+        </div><!-- /.info-box-content -->
+      </div><!-- /.info-box -->
+  </div>
+  <div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <!-- Apply any bg-* class to to the icon to color it -->
+        <span class="info-box-icon bg-yellow"><i class="fa fa-star-o"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">DUDI</span>
+          <span class="info-box-number">{{ $jml_dudi }}</span>
+        </div><!-- /.info-box-content -->
+      </div><!-- /.info-box -->
+  </div>
+</div>
+
+
+
+
 @endsection

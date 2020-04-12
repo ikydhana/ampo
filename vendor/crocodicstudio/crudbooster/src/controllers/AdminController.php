@@ -8,11 +8,21 @@ use Illuminate\Support\Facades\Validator;
 
 class AdminController extends CBController
 {
+
     function getIndex()
     {
+      $id = CRUDBooster::myId();
+      $roles = DB::table('cms_privileges')->where('name', 'Siswa')->first();
+      $jml_siswa = DB::table(config('crudbooster.USER_TABLE'))->where('id_cms_privileges', $roles->id)->count();
+      $roles = DB::table('cms_privileges')->where('name', 'Pembimbing Sekolah')->first();
+      $jml_pembimbing = DB::table(config('crudbooster.USER_TABLE'))->where('id_cms_privileges', $roles->id)->count();
+      $jml_dudi = DB::table('dudi')->count();
+
         $data = [];
         $data['page_title'] = '<strong>Dashboard</strong>';
-
+        $data['jml_siswa'] = $jml_siswa;
+        $data['jml_pembimbing'] = $jml_pembimbing;
+        $data['jml_dudi'] = $jml_dudi;
         return view('crudbooster::home', $data);
     }
 
